@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Autofit\Image0.png" />
+    <None Remove="Autofit\Image1.png" />
+    <None Remove="Autofit\Image10.png" />
+    <None Remove="Autofit\Image11.png" />
+    <None Remove="Autofit\Image12.png" />
+    <None Remove="Autofit\Image13.png" />
+    <None Remove="Autofit\Image14.png" />
+    <None Remove="Autofit\Image15.png" />
+    <None Remove="Autofit\Image16.png" />
+    <None Remove="Autofit\Image17.png" />
+    <None Remove="Autofit\Image18.png" />
+    <None Remove="Autofit\Image19.png" />
+    <None Remove="Autofit\Image2.png" />
+    <None Remove="Autofit\Image3.png" />
+    <None Remove="Autofit\Image4.png" />
+    <None Remove="Autofit\Image5.png" />
+    <None Remove="Autofit\Image6.png" />
+    <None Remove="Autofit\Image7.png" />
+    <None Remove="Autofit\Image8.png" />
+    <None Remove="Autofit\Image9.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Autofit\Image0.png" />
+    <EmbeddedResource Include="Autofit\Image1.png" />
+    <EmbeddedResource Include="Autofit\Image10.png" />
+    <EmbeddedResource Include="Autofit\Image11.png" />
+    <EmbeddedResource Include="Autofit\Image12.png" />
+    <EmbeddedResource Include="Autofit\Image13.png" />
+    <EmbeddedResource Include="Autofit\Image14.png" />
+    <EmbeddedResource Include="Autofit\Image15.png" />
+    <EmbeddedResource Include="Autofit\Image16.png" />
+    <EmbeddedResource Include="Autofit\Image17.png" />
+    <EmbeddedResource Include="Autofit\Image18.png" />
+    <EmbeddedResource Include="Autofit\Image19.png" />
+    <EmbeddedResource Include="Autofit\Image2.png" />
+    <EmbeddedResource Include="Autofit\Image3.png" />
+    <EmbeddedResource Include="Autofit\Image4.png" />
+    <EmbeddedResource Include="Autofit\Image5.png" />
+    <EmbeddedResource Include="Autofit\Image6.png" />
+    <EmbeddedResource Include="Autofit\Image7.png" />
+    <EmbeddedResource Include="Autofit\Image8.png" />
+    <EmbeddedResource Include="Autofit\Image9.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="17.1.0.53" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
+  </ItemGroup>
+</Project>

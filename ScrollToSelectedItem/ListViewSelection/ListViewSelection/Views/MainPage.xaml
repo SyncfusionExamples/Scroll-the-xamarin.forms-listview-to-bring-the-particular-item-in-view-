@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoFitSample.MainPage"
+             xmlns:local="clr-namespace:AutoFitSample"
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms">
+    <ContentPage.BindingContext>
+        <local:ListViewAutoFitContentViewModel x:Name="ViewModel"/>
+    </ContentPage.BindingContext>
+    <sync:SfListView x:Name="listView" ItemSize="40" GroupHeaderSize="40" Orientation="Vertical" 
+                         ItemSpacing="2" Grid.ColumnSpan="2"
+                         AutoFitMode="Height"
+                         ItemsSource="{Binding BookInfo}"
+                         SelectionMode="Single"
+                         SelectionBackgroundColor="#d3d3d3">
+        <sync:SfListView.Behaviors>
+            <local:Behavior/>
+        </sync:SfListView.Behaviors>
+
+        <sync:SfListView.FooterTemplate>
+            <DataTemplate>
+                <Grid BackgroundColor="Bisque">
+                <Label Text="Footer"/>
+                </Grid>
+            </DataTemplate>
+        </sync:SfListView.FooterTemplate>
+        <sync:SfListView.HeaderTemplate>
+            <DataTemplate>
+                <Grid BackgroundColor="Azure">
+                <Label Text="Header"/>
+                </Grid>
+            </DataTemplate>
+        </sync:SfListView.HeaderTemplate>
+        <sync:SfListView.GroupHeaderTemplate>
+            <DataTemplate>
+                <Grid BackgroundColor="Blue">
+                <Label Text="{Binding Key}"/>
+                </Grid>
+            </DataTemplate>
+        </sync:SfListView.GroupHeaderTemplate>
+        <sync:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" RowSpacing="0" Padding="5,10,5,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding AuthorImage}"
+                   Grid.Column="0"
+                   HeightRequest="70"
+                   WidthRequest="70"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center" />
+                            <StackLayout Padding="10,0,0,0" Orientation="Vertical" Grid.Column="1">
+                                <Label Text="{Binding BookName}" FontAttributes="Bold" FontSize="18" TextColor="#474747" VerticalTextAlignment="Center"/>
+                                <Label Text="By Syncfusion Software" FontSize="12" TextColor="#474747" VerticalTextAlignment="Center"/>
+                                <Label Text="Published on: March 22, 2017" FontSize="12" TextColor="#474747" VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Grid>
+                        <StackLayout Padding="5,10,0,5" Grid.Row="1" Orientation="Vertical">
+                            <Label Text="Description" FontSize="15" FontAttributes="Bold"  TextColor="#474747" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding BookDescription}" TextColor="#474747" FontSize="14" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <BoxView Grid.Row="2" HeightRequest="1" BackgroundColor="#474747" />
+                    </Grid>
+                </DataTemplate>
+        </sync:SfListView.ItemTemplate>
+    </sync:SfListView>
+</ContentPage>
